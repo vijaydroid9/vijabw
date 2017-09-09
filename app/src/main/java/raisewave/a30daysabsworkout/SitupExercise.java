@@ -81,6 +81,7 @@ public class SitupExercise extends ActionBarActivity{
                         Intent next_intent=new Intent(SitupExercise.this,CrunchesExercise.class);
                         next_intent.putExtra("dayvalue",dayvalue);
                         startActivity(next_intent);
+                        finish();
                     }
                 });
             }
