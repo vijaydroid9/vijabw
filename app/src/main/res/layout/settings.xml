@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0b1633"
+    android:orientation="vertical">
+
+    <!--<TextView
+        android:id="@+id/text_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:text="  Settings"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />-->
+
+
+    <Button
+        android:id="@+id/button_exercisesreset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_bg"
+        android:text="RESET ALL DAYS"
+        android:textColor="#000" />
+
+
+    <Button
+        android:id="@+id/button_setreminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/btn_bg"
+        android:text="SET REMINDER"
+        android:textColor="#000" />
+    <Button
+        android:id="@+id/button_cancelreminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/btn_bg"
+        android:text="CANCEL REMINDER"
+        android:textColor="#000" />
+    <Button
+        android:id="@+id/button_disclaimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/btn_bg"
+        android:text="Disclaimer"
+        android:textColor="#000" />
+
+</LinearLayout>

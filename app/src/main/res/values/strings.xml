@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">30DaysAbsWorkout</string>
+    <string name="app_situps">Sit Ups</string>
+    <string name="app_crunches">Crunches</string>
+    <string name="app_legraises">Leg Raises</string>
+    <string name="app_plank">Plank</string>
+    <string name="app_start">START</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_moreapps">More Apps</string>
+    <string name="app_rest">Rest for 60 seconds</string>
+    <string name="situp_instructions">"Lie on your back with your Kness bent and your feet flat on the floor.Place your finger tips behind your ears.Pull your shoulder blades back so your elbows are out of the side.Brace your abs and then raise your body up towards your kness,shoulders should be lifted of the floor.Head always looking straight, no chin on chest and do not pull the head forward.Roll back down to the starting position."</string>
+    <string name="crunch_instructions">"Lie on your back with your Knees bent and your feet flat on the floor.Place your finger tips behind your head so your thumbs are behind your ears.Don't lace your fingers together.Hold your elbows out of the sides but rounded slightly in.Tilt your chin sligthly,leaving a few inches of space  between your chin and your chest.Gently pull your abdominals inward.Curl up and forward so that your head,neck and shoulder blades lift off the floor.Hold for a moment at the top of the movement and then lower slowly back down."</string>
+    <string name="legraise_instructions">Keep your legs as straight as possible,and hold a dumbbell between your feet if you want added resistance.Slowly raise your legs perpendicular to the floor.Hold the contraction at the top for a second,and then slowly lower your legs to the start position.</string>
+    <string name="plank_instructions">Start by getting into a press up position.Bend your elbows and rest your weight on your forearms and not on your hands.Your body should form a straight line from shoulders to ankles.Engage your core by sucking your belly position into your spine.Hold this position for the prescribed time.</string>
+</resources>
