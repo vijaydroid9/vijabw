@@ -31,7 +31,7 @@ import java.util.List;
     List<ExercisesDetailBean> exercise_bean=new ArrayList<ExercisesDetailBean>();
     TextView text_instruction;
     ActionBar actionBar;
-    MediaPlayer mPlayer;
+    //MediaPlayer mPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +48,7 @@ import java.util.List;
         dayvalue=get_intent.getStringExtra("dayvalue");
         actionBar = getSupportActionBar();
         actionBar.setTitle("Day "+dayvalue);
-        mPlayer = MediaPlayer.create(LegRaisesExercise.this, R.raw.sound);
+        //mPlayer = MediaPlayer.create(LegRaisesExercise.this, R.raw.sound);
         DataBaseHelper dataBaseHelper=new DataBaseHelper(LegRaisesExercise.this);
         exercise_bean=dataBaseHelper.getDayExercises(dayvalue);
         text_instruction.setText("DO "+exercise_bean.get(2).getExercise_count()+" Leg Raises");
@@ -117,10 +117,10 @@ import java.util.List;
         @Override
         public void onFinish() {
             btn_next.setText("NEXT");
-            mPlayer.start();
+           // mPlayer.start();
         }
     }
-    @Override
+   /* @Override
     protected void onPause() {
         if (mPlayer!= null){
             mPlayer.release();
@@ -134,5 +134,5 @@ import java.util.List;
             mPlayer.release();
         }
         super.onDestroy();
-    }
+    }*/
 }

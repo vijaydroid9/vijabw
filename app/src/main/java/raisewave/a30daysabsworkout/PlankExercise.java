@@ -30,7 +30,7 @@ public class PlankExercise extends ActionBarActivity {
     List<ExercisesDetailBean> exercise_bean = new ArrayList<ExercisesDetailBean>();
     TextView text_instruction;
     ActionBar actionBar;
-    MediaPlayer mPlayer;
+    //MediaPlayer mPlayer;
     DataBaseHelper dataBaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class PlankExercise extends ActionBarActivity {
         dayvalue = get_intent.getStringExtra("dayvalue");
         actionBar = getSupportActionBar();
         actionBar.setTitle("Day "+dayvalue);
-        mPlayer = MediaPlayer.create(PlankExercise.this, R.raw.sound);
+      //  mPlayer = MediaPlayer.create(PlankExercise.this, R.raw.sound);
         dataBaseHelper = new DataBaseHelper(PlankExercise.this);
         exercise_bean = dataBaseHelper.getDayExercises(dayvalue);
         text_instruction.setText("DO " + exercise_bean.get(3).getExercise_time() + " Seconds Plank");
@@ -112,10 +112,10 @@ public class PlankExercise extends ActionBarActivity {
         @Override
         public void onFinish() {
 
-            mPlayer.start();
+           // mPlayer.start();
         }
     }
-    @Override
+   /* @Override
     protected void onPause() {
         if (mPlayer!= null){
             mPlayer.release();
@@ -129,5 +129,5 @@ public class PlankExercise extends ActionBarActivity {
             mPlayer.release();
         }
         super.onDestroy();
-    }
+    }*/
 }
