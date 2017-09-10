@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,7 +21,7 @@ import java.util.List;
 /**
  * Created by User on 8/10/2016.
  */
-public class CrunchesExercise extends Activity{
+public class CrunchesExercise extends ActionBarActivity{
      Button btn_next;
      ImageView img_instruction;
      Button btn_instruction;
@@ -26,8 +29,10 @@ public class CrunchesExercise extends Activity{
     String dayvalue;
     List<ExercisesDetailBean> exercise_bean=new ArrayList<ExercisesDetailBean>();
     TextView text_instruction;
+    ActionBar actionBar;
+    MediaPlayer mPlayer;
 
-     //Handler handler=new Handler();
+    //Handler handler=new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,9 @@ public class CrunchesExercise extends Activity{
 
         Intent get_intent=getIntent();
         dayvalue=get_intent.getStringExtra("dayvalue");
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("Day "+dayvalue);
+        mPlayer = MediaPlayer.create(CrunchesExercise.this, R.raw.sound);
         DataBaseHelper dataBaseHelper=new DataBaseHelper(CrunchesExercise.this);
         exercise_bean=dataBaseHelper.getDayExercises(dayvalue);
         text_instruction.setText("DO "+exercise_bean.get(1).getExercise_count()+" Crunches");
@@ -110,6 +118,22 @@ public class CrunchesExercise extends Activity{
         @Override
         public void onFinish() {
             btn_next.setText("NEXT");
+            mPlayer.start();
         }
+    }
+    @Override
+    protected void onPause() {
+        if (mPlayer!= null){
+            mPlayer.release();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mPlayer!= null){
+            mPlayer.release();
+        }
+        super.onDestroy();
     }
 }

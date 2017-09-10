@@ -50,7 +50,6 @@ public class Progress extends Activity{
         circularProgressBar.setProgressWithAnimation(12, animationDuration); // Default duration = 1500ms*/
         DataBaseHelper db_helper=new DataBaseHelper(Progress.this);
         progdb=db_helper.getProgress();
-        Toast.makeText(Progress.this,String.valueOf(progdb),Toast.LENGTH_SHORT).show();
         tv_daysprog.setText(String.valueOf(progdb)+" Days");
         progdb=progdb*100;
         progvalue =(progdb/23.0f);

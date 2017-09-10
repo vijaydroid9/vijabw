@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
@@ -29,6 +30,7 @@ public class SitupExercise extends ActionBarActivity{
     List<ExercisesDetailBean> exercise_bean=new ArrayList<ExercisesDetailBean>();
     TextView text_instruction;
     ActionBar actionBar;
+    MediaPlayer mPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,7 @@ public class SitupExercise extends ActionBarActivity{
 
         actionBar = getSupportActionBar();
         actionBar.setTitle("Day "+dayvalue);
-
+        mPlayer = MediaPlayer.create(SitupExercise.this, R.raw.sound);
         DataBaseHelper dataBaseHelper=new DataBaseHelper(SitupExercise.this);
         exercise_bean=dataBaseHelper.getDayExercises(dayvalue);
         text_instruction.setText("DO "+exercise_bean.get(0).getExercise_count()+" Sit-Ups");
@@ -104,6 +106,23 @@ public class SitupExercise extends ActionBarActivity{
         @Override
         public void onFinish() {
             btn_next.setText("NEXT");
+            mPlayer.start();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        if (mPlayer!= null){
+            mPlayer.release();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mPlayer!= null){
+            mPlayer.release();
+        }
+        super.onDestroy();
     }
 }
