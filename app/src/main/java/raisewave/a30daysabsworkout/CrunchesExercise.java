@@ -78,6 +78,7 @@ public class CrunchesExercise extends Activity{
                         Intent next_intent=new Intent(CrunchesExercise.this,LegRaisesExercise.class);
                         next_intent.putExtra("dayvalue",dayvalue);
                         startActivity(next_intent);
+                        finish();
                     }
                 });
             }

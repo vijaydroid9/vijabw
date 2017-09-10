@@ -78,6 +78,7 @@ import java.util.List;
                         Intent next_intent=new Intent(LegRaisesExercise.this,PlankExercise.class);
                         next_intent.putExtra("dayvalue",dayvalue);
                         startActivity(next_intent);
+                        finish();
                     }
                 });
             }

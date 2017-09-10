@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-
         finish();
     }
 }

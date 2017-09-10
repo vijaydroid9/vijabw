@@ -65,17 +65,5 @@ public class DaysList extends ActionBarActivity {
         }
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        super.onBackPressed();
-        Intent day_exercise=new Intent(DaysList.this,MainActivity.class);
-
-        startActivity(day_exercise);
-        finish();
-
-    }
-
-
-    }
+}
 

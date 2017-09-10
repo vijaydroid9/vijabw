@@ -77,27 +77,18 @@ public class PlankExercise extends Activity {
                 btn_next.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                                dataBaseHelper.SetProg(Integer.parseInt(dayvalue));
+                        dataBaseHelper.SetProg(Integer.parseInt(dayvalue));
                         Intent dayplan_intent=new Intent(PlankExercise.this,MainActivity.class);
-                        dayplan_intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        dayplan_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        dayplan_intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(dayplan_intent);
+                        finish();
                     }
                 });
             }
         });
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        super.onBackPressed();
-        Intent day_exercise=new Intent(PlankExercise.this,DayPlan.class);
-        day_exercise.putExtra("dayvalue",dayvalue);
-        startActivity(day_exercise);
-        finish();
 
-    }
     public class MyCountDownTimer extends CountDownTimer {
 
         public MyCountDownTimer(long millisInFuture, long countDownInterval) {
